@@ -1,4 +1,4 @@
-describe ('Titles' , () => {   
+describe ('Title' , () => {   
     before (() => {
         cy.visit('https://www.beaxy.com/careers/');
        
@@ -13,4 +13,4 @@ describe ('Titles' , () => {
         cy.get('.body-content>div:nth-child(5) .content-item__title').invoke('text').should('eq', 'Opportunities for everyone');
         cy.get('.body-content>div:nth-child(6) .content-item__title').invoke('text').should('eq', 'Empowering freedom');
     });
-});
+}); 
