@@ -1,3 +1,17 @@
+/*Comments:
+1) Можно было использовать href
+2) Скорее всего ты столкнулась с кросснавигацией в cypress
+The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.
+У cypress есть особенность они не совсем поддерживают кросс навигацию, для того чтобы это поддержать есть эксперимент 
+experimentalSessionAndOrigin: true, его нужно добавить в cypress.config.js. в раздел module.exports = defineConfig({}):
+на лекции рассмотрите некоторые варианты.
+И еще момент  это праверка будет падать потому результат с которым ты сравнивает он всегда будет меняться 
+при перезапуске на разных копьютерах, поэтому тут бы использовать   проверку на вхождение сабстроки или contains 
+cy.location('').should('equal', 'https://www.facebook.com/login.php?skip_api_login=1&api_key=2658120331157562&kid_directed_site=0&app_id=2658120331157562&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv3.2%2Fdialog%2Foauth%3Fclient_id%3D2658120331157562%26redirect_uri%3Dhttps%253A%252F%252Fauth.multiplex.ua%252Ffbcallback%26response_type%3Dcode%26scope%3Demail%26state%3DKZO4AEI_MeIXAy7CKszkNw%253D%253D%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Da3809746-e921-4f5a-927f-d827f20da761%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fauth.multiplex.ua%2Ffbcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3DKZO4AEI_MeIXAy7CKszkNw%253D%253D%23_%3D_&display=page&locale=tr_TR&pl_dbl=0');
+
+*/
+
+
 describe ('Multiplex' , () => {  
     beforeEach (() => {
         cy.viewport(820,1180);
