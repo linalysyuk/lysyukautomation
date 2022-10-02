@@ -1,5 +1,5 @@
 describe('test', () => {
-    it('', () => {
+    it('', () =>{
         cy.viewport(1920, 1080);
         cy.visit('https://demoqa.com/frames');
         cy.get('iframe').then(function($iFrame){
