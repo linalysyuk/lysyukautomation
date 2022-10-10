@@ -1,0 +1,35 @@
+// Home task store
+// 1.Post/order/store
+describe('Place an order for a pet',()=>{
+    it.skip('POST/store/order',()=> {
+        cy.request({method: 'POST', url:'https://petstore.swagger.io/v2/store/order', body: {
+            "id": 22,
+            "petId": 35,
+            "quantity": 15,
+            "shipDate": "2022-10-10T19:45:23.359Z",
+            "status": "placed",
+            "complete": true
+            }})
+         .then((response)=>{
+            const{ petId } = response.body;
+            expect(petId).equal(35);
+            expect(response.status).to.eq(200);
+            expect(response).to.have.property('body');
+         });
+
+        });
+    });
+
+    //2.GET/store/order/{orderID}
+    //3.DELETE/store/order/{orderID}   
+    
+    //4.GET/store/invertory
+    it.only('Returns pet inventories by status', () => {
+        cy.request('GET', 'https://petstore.swagger.io/v2/store/inventory')
+        .then((response) => {
+            expect(response.body).to.have.be.not.null
+        });   
+});
+
+
+
