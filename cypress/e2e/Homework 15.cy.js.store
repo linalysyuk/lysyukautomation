@@ -1,3 +1,39 @@
+
+/*
+Comments:
+1. не вижу все тесты на все запросы,?
+2. 
+Вариант для DELETE, внимательно почитай чему должну быть равен orderID
+
+it("Delete purchase order by ID", () => {
+    const body = {
+      id: 11,
+      petId: 4,
+      quantity: 1,
+      shipDate: "2022-10-10T19:03:51.349Z",
+      status: "placed",
+      complete: true,
+    };
+    cy.request("POST", "https://petstore.swagger.io/v2/store/order", body)
+      .its("status")
+      .should("equal", 200);
+
+    cy.request("DELETE", "https://petstore.swagger.io/v2/store/order/11").then(
+      (response) => {
+        expect(response.body.code).to.have.eq(200);
+      }
+    );
+  });
+
+
+3.   expect(response.body).to.have.be.not.null. - эту проверку можно сделать короче
+
+      expect(response.body).not.empty; 
+      
+ 4. Пожалуйста, допиши остальное.
+*/
+
+
 // Home task store
 // 1.Post/order/store
 describe('Place an order for a pet',()=>{
