@@ -23,4 +23,4 @@ it.only('Terra4',()=>{
   cy.wait(7000); 
   cy.get('[class=ts-promise__items]').invoke('remove');
   cy.matchImageSnapshot();
-  });
+  })
