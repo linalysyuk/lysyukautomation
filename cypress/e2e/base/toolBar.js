@@ -51,7 +51,7 @@ export const selectorsOfShop={
             return cy.get('#mainnav > ul > li:nth-child(3) > ul> li> a').contains(text);
         }
     }
-    openPageOnSectionShop(namePage){
+        openPageOnSectionShop(namePage){
         cy.get(this.buttonMenuShop).click();
         cy.get(this.shopSubMenu).invoke('show');
         this.pageInSectionShop('namePage').click();
@@ -153,3 +153,41 @@ openPageOnSectionBlogs(namePage){
     cy.get(this.BlogsSubMenu).invoke('show');
     this.pageInSectionBlogs('namePage').click();
   }module.exports = new toolBar();
+
+ 
+ 
+ 
+  /* practical
+
+
+
+
+/*
+  * Internal List of the clothing section/
+  */
+ class toolbar{
+   get clothingSection () {
+      return'#mainnav > ul > li:nth-child(2) > ul > li:nth-child(1) > ul'
+ }
+ /** 
+   *Finds a link element by text in the clothing section.
+   *@param text link name.
+   */
+   pageInSectionClothingInHome(text){
+       return cy.get('#mainnav > ul > li:nth-child(2) > ul > li:nth-child(1) > ul> li> a')
+       .contains(text)
+   }
+
+   /** 
+   *Opens a page from the home List.
+   *@param namePage Name of the section in the List.
+   */
+   openPageOnSectionHome(namePage, clothingSection){
+    cy.get(this.sectionHome).invoke('show');
+      if(clothingSection ){
+        cy.get(this.clothingSection).invoke('show')
+        this.pageInSectionClothingInHome(namePage).click();
+      }
+      this.pageInSectionHome(namePage).click();
+
+   }

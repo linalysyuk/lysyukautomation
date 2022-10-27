@@ -23,3 +23,29 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+ 
+
+Cypress.Commands.add('clickOnElement', (elementLocator) => {
+    cy.get(`${elementLocator}`,{timeout:2000}).click();
+});
+Cypress.Commands.add('typeTextInput',(inputLocator,text)=>{
+    cy.get(`${inputLocator}`,{timeout:4000})
+    .should('be.visible')
+    .type(text)
+});
+
+//Cypress.Commands.add('clickElement',(element)=>{
+//if(element[0] !=='/'){
+   // cy.get(`${element}`,{timeout:4000}).should('be.visible').click();
+    //}else{
+      //  cy.xpath(`${element}`,{timeout:4000}).should('be.visible').click();
+    //}
+//});
+
+Cypress.Commands.add('clickLinkText',(textLink) => {
+    cy.get('a',{timeout:5000}).contains('textLink').click();
+});
+
+Cypress.Commands.add('clickOnElement', (elementLocator) => {
+    cy.get(`${elementLocator}`, {timeout: 2000}).click();
+});

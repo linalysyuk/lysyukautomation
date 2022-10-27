@@ -1,6 +1,6 @@
 // <reference types = 'Cypress'/>
 
-import burger from '..base/burger'
+import burger from '../base/burger'
 
 describe('Burger menu', () => {
     before(() => {

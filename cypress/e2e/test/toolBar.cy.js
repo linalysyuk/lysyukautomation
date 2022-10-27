@@ -28,3 +28,4 @@ describe('Toolbar', () => {
        it('open page Blogs', () => {
        toolBar.openPageOnSectionBlogs('left sidebar')
     });
+});
