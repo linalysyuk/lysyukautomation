@@ -17,4 +17,3 @@ describe('Calculator')=>{
     cy.get('.widget__output-data-wrapp .widget__output-data').should('have.text','0.03309748');
 
     });
-});
