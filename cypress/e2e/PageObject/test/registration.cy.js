@@ -1,6 +1,6 @@
 /// <reference types = 'Cypress'/>
 
-import registrationPage from'./base/registrationPage'
+import  createAccountForm from'./base/registrationPage'
 
 describe('registrationPage', () => {
  

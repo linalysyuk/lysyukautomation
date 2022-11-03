@@ -8,4 +8,3 @@ class registrationForm {
         buttonCreateAccount:()=> cy.get('form div:nth-child(2) > button')
 
     } module.exports = new registrationForm();
-   
