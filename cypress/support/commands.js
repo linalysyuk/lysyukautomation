@@ -49,3 +49,13 @@ Cypress.Commands.add('clickLinkText',(textLink) => {
 Cypress.Commands.add('clickOnElement', (elementLocator) => {
     cy.get(`${elementLocator}`, {timeout: 2000}).click();
 });
+
+Cypress.Commands.add('getText', (selector) => {  
+    let productName;
+    cy.get(selector).eq(0)
+    .then(($element) => {
+      productName = $element.text()    
+  }).then(() => {
+    cy.wrap(productName)
+  })
+});

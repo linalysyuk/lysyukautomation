@@ -10,7 +10,7 @@ module.exports = defineConfig({
       //addMatchImageShapshotPlugin(on,config)
     },
   //excludeSpecPattern: ['**/cypress/e2e/1-getting-started','**/cypress/e2e/2-advanced-examples'],
-      //baseUrl: 'https://www.beaxy.com/',
+      //baseUrl: 'https://www.maxon.net/en/',
       //defaultCommandTimeout: 6000,
       //retries:2,
       //redirectionLink: 20,
